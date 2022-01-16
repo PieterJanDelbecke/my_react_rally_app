@@ -15,6 +15,7 @@ const NewMatch = () => {
             playerB: event.target.playerB.value,
             sets: parseInt(event.target.sets.value,10)
         })
+        
         navigate("/choice")
     }
 
