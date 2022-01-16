@@ -1,12 +1,21 @@
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
+
+import Context from "../context/context"
+
 const NewMatch = () => {
+
+    const { context, setContext } = useContext(Context)
+    const navigate = useNavigate()
 
     const handleSubmit = (event) =>{
         event.preventDefault()
-        console.log("form submitted")
-        console.log("PlayerA",event.target.playerA.value)
-        console.log("PlayerB",event.target.playerB.value)
-        console.log("sets",event.target.sets.value)
-
+        setContext ({
+            playerA: event.target.playerA.value,
+            playerB: event.target.playerB.value,
+            sets: parseInt(event.target.sets.value,10)
+        })
+        navigate("/choice")
     }
 
     return (

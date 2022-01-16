@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Context from "./context/context";
@@ -11,7 +12,7 @@ function App() {
   const [context, setContext] = useState({})
 
   return (
-    <Context.Provider value={(context, setContext)}>
+    <Context.Provider value={{context, setContext}}>
       <BrowserRouter>
           <Routes>
               <Route path="/" element={<NewMatch />}/>
