@@ -159,7 +159,14 @@ const useTennisState = (
 	};
 
 	const swapSides = () => {
-		const gamesPlayed = _.sum(scoreA) + _.sum(scoreB);
+		const currentSetIndex = scoreA.length - 1;
+
+		let gamesPlayed = scoreA[currentSetIndex] + scoreB[currentSetIndex];
+
+		if (gamesPlayed === 0 && currentSetIndex > 0) {
+			gamesPlayed = scoreA[currentSetIndex - 1] + scoreB[currentSetIndex - 1];
+		}
+
 		if (gamesPlayed % 2 === 1) {
 			setLeftPlayer(rightPlayer);
 		}
