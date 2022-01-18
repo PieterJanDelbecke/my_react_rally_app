@@ -4,6 +4,18 @@ import styled from "@emotion/styled"
 
 import Context from "../context/context"
 
+const Container = styled.div`
+    padding: 24px;
+    max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+`
+const H1 = styled.h1`
+    font-size: 28px;
+    font-wight: 500px;
+`
+
 const NewMatch = () => {
 
     const { context, setContext } = useContext(Context)
@@ -21,8 +33,8 @@ const NewMatch = () => {
     }
 
     return (
-        <>
-            <h1>New Match</h1>
+        <Container>
+            <H1>New Match</H1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input type="text" placeholder="Player A" name="playerA"/>
@@ -43,7 +55,7 @@ const NewMatch = () => {
                     <button type="submit">Continue</button>
                 </div>
             </form>
-        </>
+        </Container>
     )
 }
 
