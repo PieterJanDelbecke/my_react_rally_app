@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import styled from "@emotion/styled"
 
 import Context from "../context/context"
 
@@ -15,7 +16,7 @@ const NewMatch = () => {
             playerB: event.target.playerB.value,
             sets: parseInt(event.target.sets.value,10)
         })
-        
+
         navigate("/choice")
     }
 
