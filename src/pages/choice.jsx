@@ -15,6 +15,7 @@ const Choice = () => {
         server: event.target.server.value,
         leftPlayer: event.target.left.value
     })
+
     navigate("/match")
   }
 

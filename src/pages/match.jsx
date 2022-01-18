@@ -27,12 +27,30 @@ const Match = () => {
   return (
     <>
         <div>
-            {playerA}
+            {playerA} {server == playerA && " (S)"}
         </div>
         <div>
-            {playerB}
+            {scoreA.map((gameScore, i) =>(
+                <span key={i}>{gameScore}</span>
+            ))}
+            <span key="points"> - {pointsA}</span>
         </div>
-
+        <div>
+            {playerB} {server == playerB && " (S)"}
+        </div>
+        <div>
+            {scoreB.map((gameScore,i)=>(
+                <span key={i}>{gameScore}</span>
+            ))}
+            <span key="points"> - {pointsB}</span>
+        </div>
+        <div>Left: {leftPlayer}</div>
+        <div>Right: {rightPlayer}</div>
+        <div>
+            <button onClick={pointToLeft}>{leftPoints}</button>
+            <button onClick={pointToRight}>{rightPoints}</button>
+        </div>
+        {winner && <div>{winner}</div>}
     </>
   );
 };
